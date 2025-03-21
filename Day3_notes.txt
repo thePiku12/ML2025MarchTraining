@@ -1,0 +1,14 @@
+numpy notes -> https://sites.engineering.ucsb.edu/~shell/che210d/numpy.pdf
+
+
+'''
+Interpreting Z-Score:
+Z-score = 0 → Data point is equal to the mean.
+Z-score > 0 → Data point is above the mean.
+Z-score < 0 → Data point is below the mean.
+Z-score > 3 or < -3 → Considered an outlier.
+'''
+
+
+
+[]

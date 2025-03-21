@@ -1,0 +1,438 @@
+
+link : https://lab.rtscloud.in
+
+
+username password
+-------------------
+user101	Admin@123     shobhit
+user102	Admin@123    dweepa
+user103	Admin@123    piyush
+user104	Admin@123    vidya
+user105	Admin@123    Ajith
+user106	Admin@123    Sukanya
+user107	Admin@123    Sairam
+user108	Admin@123    Vagisha
+user109	Admin@123    Panjak
+user110	Admin@123    Balu
+user111	Admin@123    Datta Sai
+user112	Admin@123    Bhanupriya
+user113	Admin@123   Jogendra
+user114	Admin@123   Neha Yadav
+user115	Admin@123   Ramesh
+user116	Admin@123   Lakshay
+user117	Admin@123   Minali
+user118	Admin@123   Pradeep
+user119	Admin@123   Pankaj
+user120	Admin@123   Desam Reddy
+user121	Admin@123   Pradeep
+user122	Admin@123   Vineeth
+user123	Admin@123   Akash
+user124	Admin@123    Ramesh
+user125	Admin@123     Giri
+user126 Admin@123   sriram
+user127 Admin@123  Poornaraj
+
+
+
+##############################################
+
+
+
+
+
+
+
+
+
+data = {
+    "glossary": {
+        "title": "example glossary",
+		"GlossDiv": {
+            "title": "S",
+			"GlossList": {
+                "GlossEntry": {
+                    "ID": "SGML",
+					"SortAs": "SGML",
+					"GlossTerm": "Standard Generalized Markup Language",
+					"Acronym": "SGML",
+					"Abbrev": "ISO 8879:1986",
+					"GlossDef": {
+                        "para": "A meta-markup language, used to create markup languages such as DocBook.",
+						"GlossSeeAlso": ["GML", "XML"]
+                    },
+					"GlossSee": "markup"
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+define a dictionary as below
+
+info = {
+"id": "0001",
+"type": "donut",
+"name": "Cake",
+"image":
+{
+"url": "images/0001.jpg",
+"width": 200,
+"height": 200
+},
+"thumbnail":
+{
+"url": "images/thumbnails/0001.jpg",
+"width": 32,
+"height": 32
+}
+}
+
+
+sample output:
+
+ID             : 0001
+TYPE           : donut
+NAME            : Cake
+IMAGE URL       :"images/0001.jpg
+IMAGE WIDTH     : 200
+IMAGE HEIGHT    : 200
+THUMBNAIL URL   : "images/thumbnails/0001.jpg"
+THUMBNAIL WIDTH : 32
+THUMBNAIL HEIGHT:  32
+
+
+
+
+
+map(), zip()
+------------------
+
+
+
+
+
+# traditional way
+def display(a,b):
+    c = a  + b
+    return c
+
+output = display(10,20)   # if called only once ... 10 system calls are invoked
+print(output)
+
+
+# lambda function - inliner function - anonymous function
+# lambda function is the single liner function
+
+#syntax
+#functioname = lambda variables : expression
+
+display  = lambda a,b: a + b
+output = display(10,20)   # if called only once ... 10 system calls are invoked
+print(output)
+
+
+# lambda wit if cond
+even_odd = lambda x: "Even" if x % 2 == 0 else "Odd"
+print(even_odd(4))
+
+
+# largets number
+max_num = lambda a, b: a if a > b else b
+print(max_num(10, 20))  # Output: 20
+
+
+import os
+file_exists = lambda filename: "Exists" if os.path.isfile(filename) else "Does Not Exist"
+print(file_exists("task1.py"))  # Output depends on file existence
+
+# get filesize if exists
+file_size = lambda filename: os.path.getsize(filename) if os.path.isfile(filename) else "File Not Found"
+print(file_size("example.txt"))  # Output: File size in bytes or "File Not Found"
+
+
+
+alist = [10,20,30]
+#[20,30,40]
+
+
+
+#map(function,iterable)
+
+print(list(map( lambda x: x+5 ,alist)))
+
+#otherway
+blist = []
+for val in alist:
+    blist.append(val + 5)
+print(blist)
+
+
+
+c
+
+
+
+
+
+# absolute path of files
+files = ["task1.py","task2.py"]
+absolute_paths = list(map(lambda f: os.path.abspath(f), files))
+print(absolute_paths)
+
+
+
+####################################################
+
+import timeit
+
+numbers = list(range(1000000))
+
+# Using a for loop
+def for_loop():
+    squared = []
+    for num in numbers:
+        squared.append(num ** 2)
+    return squared
+
+# Using list comprehension
+def list_comprehension():
+    return [num ** 2 for num in numbers]
+
+# Using map()
+def using_map():
+    return list(map(lambda num: num ** 2, numbers))
+
+# Measure execution time
+print("For Loop:", timeit.timeit(for_loop, number=10))
+print("List Comprehension:", timeit.timeit(list_comprehension, number=10))
+print("Map Function:", timeit.timeit(using_map, number=10))
+
+
+requirements.txt
+-----------------
+pymysql
+pymongo
+psutil
+
+
+
+pip install -r .\requirements.txt
+
+
+
+
+
+
+
+
+
+
+#########################################################
+
+
+write a script to perform the below operations :
+
+1. display current working directory
+2. display login name
+3. display all environment variables
+4. display today's date ( timestamp )
+5. display sep months calendar
+6. display all .py files and its size in bytes
+7. display the modified time of employees.csv file
+8. display current process id
+9. set an environment variables. ( Eg.    TEST_PATH = "C:/Users/Admin/")
+10. Lock and unlock a file using os.open and os.close
+11. Retrieve the current system's load average.
+12. display python version
+
+
+
+
+import os
+import datetime
+import time
+import calendar
+import sys
+
+
+print(os.getcwd())
+
+
+print(os.getlogin())
+
+
+#print(os.environ)
+for key,value in os.environ.items():
+    print(key)
+    print(value)
+    print("---------------------")
+
+
+
+# display todays time
+print(datetime.datetime.now())
+print(datetime.date.today())
+print(time.localtime())
+print(time.time())
+
+
+
+print(calendar.month(2025,3))
+print(calendar.calendar(2025))
+
+
+
+# dipslay files and size
+for file in os.listdir():
+    print(file.ljust(20),   os.path.getsize(file),"bytes")
+
+
+
+filename = "task1.py"
+
+modifiedtime = os.path.getmtime(filename)
+print(datetime.datetime.fromtimestamp(modifiedtime))
+
+
+
+#process id
+print(os.getpid())
+
+
+## create new environemnt varaible
+os.environ["MY_ENV_VAAR"] = "test"
+
+
+#python versions
+print(sys.version)
+print(sys.version_info)
+
+
+
+###########################################################
+
+
+
+write a script to display the below information ( psutil library)
+
+1. CPU Usage
+2. Memory info ( total memory, available, used)
+3. process info
+4. disk partitions
+5. network statistics
+
+import psutil
+print(psutil.cpu_percent())
+
+
+print(psutil.virtual_memory())
+
+print(psutil.disk_partitions())
+
+#print(psutil.disk_usage("D:\\"))
+
+print(psutil.net_connections())
+
+
+#############################################################
+
+
+
+write a program to display the below information: ( use platform library )
+
+
+Display OS name
+Print Python version
+Show processor details
+Check system architecture (32-bit or 64-bit)
+Retrieve system hostname
+Detect if the system is Windows, Linux, or Mac
+Get Python build and compiler information
+Fetch MAC address and network details
+Monitor system uptime
+display real-time CPU, memory, and disk usage
+
+
+
+
+
+# Display OS name
+print("Operating System:", platform.system(), platform.release())
+
+# Print Python version
+print("Python Version:", platform.python_version())
+
+# Show processor details
+print("Processor:", platform.processor())
+
+# Check system architecture (32-bit or 64-bit)
+print("System Architecture:", platform.architecture())
+
+# Retrieve system hostname
+hostname = socket.gethostname()
+print("System Hostname:", hostname)
+
+# Detect if the system is Windows, Linux, or Mac
+os_type = platform.system()
+if os_type == "Windows":
+    print("System Type: Windows")
+elif os_type == "Linux":
+    print("System Type: Linux")
+elif os_type == "Darwin":
+    print("System Type: Mac")
+else:
+    print("System Type:", os_type)
+
+# Get Python build and compiler information
+print("Python Build:", platform.python_build())
+print("Python Compiler:", platform.python_compiler())
+
+
+
+
+
+
+
+################################### frequently used builtin libraries #############################
+
+os         : os level activities
+math       : mathematical operations
+sys        :  sys and python config data
+shutil     : copy,move, rmtree  etc
+urllib     : read the web, downloading the files
+logging    : logging all the events
+smtplib    : sending the mails
+ftplib     : performing ftp operations
+sysconfig  :  sys and python config data
+zipfile    : create/extract the zip files
+rarfile    : create/extract the rar files
+cryptopgraphy : encrypting and decrypting the data or files
+tarfile    : create/extract the tar files
+filecmp    : comparing files or directories
+sqlite3    : python default database
+csv        : reading/writing csv files
+xml        : reading/writing xml files
+calendar   : display month,year calendar info
+datetime   : working with date n time
+time       : working with date n time
+fractions  : working with decimal values
+glob       : display all the files
+heapq      : more of array operations ( getting largest among list )
+subprocess : executing system commands in python (  subprocess.getoutput("ls -ltr")
+pdb        : python debugger
+platform   : platform information
+random     : random operations ( shuffling , random digit ... )
+re         : grep + awk + sed
+socket     : networking programming
+stat       : stats of the file
+statistics : basic statistics
+
+telnetlib  : accessing remote servers 

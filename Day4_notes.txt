@@ -1,0 +1,17 @@
+https://manisha-sirsat.blogspot.com/2019/04/confusion-matrix.html
+
+
+
+
+
+# sensivity or recall : tells us how many actual positives were correctly identified
+#  Precision          : how many of the predicted positives are actually correct.
+# f1 score :          if f1 score is high ... model is good at both finding errors and avoidming mistakes
+ #                    if  f1 score is less ... model is making more mistkes             
+
+
+#True Positive (TP) → Model predicted Yes, and the actual was Yes.
+#False Positive (FP) → Model predicted Yes, but the actual was No (Type I Error).
+#False Negative (FN) → Model predicted No, but the actual was Yes (Type II Error).
+#True Negative (TN) → Model predicted No, and the actual was No.
+
